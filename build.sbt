@@ -4,13 +4,22 @@
 // import web settings
 seq(webSettings :_*)
 
+port in container.Configuration := 8081
+
 name := "helloworld"
 
 version := "1.0"
 
-scalaVersion := "2.9.1"
+scalaVersion := "2.10.3"
 
 libraryDependencies ++= Seq(
-  "org.eclipse.jetty" % "jetty-webapp" % "8.0.1.v20110908" % "container",
-  "javax.servlet" % "servlet-api" % "2.5" % "provided"
+  // libraries for Jetty Container:
+  //"org.eclipse.jetty" % "jetty-webapp" % "9.1.0.v20131115" % "container",
+  //"javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided"
+  //
+  // libraries for Tomcat container:
+  "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided",
+  "org.apache.tomcat.embed"% "tomcat-embed-core"% "7.0.40"% "container",
+  "org.apache.tomcat.embed"% "tomcat-embed-logging-juli"% "7.0.40"% "container",
+  "org.apache.tomcat.embed"% "tomcat-embed-jasper"% "7.0.40"% "container"
 )

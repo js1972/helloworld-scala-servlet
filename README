@@ -27,3 +27,14 @@ each saved change):
 
   container:start
   ~aux-compile
+
+
+NOTES
+=====
+The above is cloned from https://github.com/schmmd/helloworld-scala-servlet (https://github.com/schmmd/helloworld-scala-servlet.git).
+
+When creating servlets that are run by SBT and the xsbt-web-plugin (https://github.com/JamesEarlDouglas/xsbt-web-plugin),
+we must have a web.xml to define the servlet.
+However, if we only use the web plugin to package a war file; then we can deploy that war file to our own running tomcat
+instance and it will work without a web.xml (using the @WebServlet annotation instead).
+(to deploy a war to tomcat just drop it in the webapps folder and restart tomcat.)
